@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderAndWriteProduct {
-    File file = new File("C:\\Users\\dell\\IdeaProjects\\ExamQLSanPham\\src\\data\\product.csv");
+    File file = new File("product.csv");
+
     public void write(List<Product> products){
         try {
             FileWriter fileWriter = new FileWriter(file);

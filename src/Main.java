@@ -1,10 +1,12 @@
-import Controller.manageProduct;
+import Controller.ManagerRegisteredAccount;
+
 
 public class Main {
     public static void main(String[] args) {
-        manageProduct manageProducts = new manageProduct();
-        while (true){
-            manageProducts.menu();
+        System.out.println("****************");
+        ManagerRegisteredAccount managerRegisteredAccount = new ManagerRegisteredAccount();
+        while(true){
+            managerRegisteredAccount.menuRegisterAccount();
         }
     }
 }
