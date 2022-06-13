@@ -2,6 +2,8 @@ package Controller;
 
 import IO.ReaderAndWriteProduct;
 import Model.Product;
+import Sort.SortByAmount;
+import Sort.SortById;
 import Sort.SortByPrize;
 import validate.ValidateProduct;
 
@@ -10,7 +12,7 @@ import java.util.Scanner;
 
 public class manageProduct {
     Scanner scanner = new Scanner(System.in);
-    ArrayList products = new ArrayList<>();
+   public static ArrayList products = new ArrayList<>();
     ValidateProduct validateProduct = new ValidateProduct();
     ReaderAndWriteProduct readerAndWriteProduct = new ReaderAndWriteProduct();
 
@@ -32,8 +34,7 @@ public class manageProduct {
         int Prize = validateProduct.validatePrize();
         int Amount = validateProduct.validateAmount();
         String Describe = validateProduct.validateString("Mô tả: ");
-
-        return new Product(Id, Name, Prize, Amount, Describe);
+              return new Product(Id, Name, Prize, Amount, Describe);
 
 
 
@@ -70,6 +71,16 @@ public class manageProduct {
 
     public void sortByPrize() {
         products.sort(new SortByPrize());
+        System.out.println(" Đã sắp xếp");
+        show();
+    }
+    public void sortByAmount() {
+        products.sort(new SortByAmount());
+        System.out.println(" Đã sắp xếp");
+        show();
+    }
+    public void sortById() {
+        products.sort(new SortById());
         System.out.println(" Đã sắp xếp");
         show();
     }

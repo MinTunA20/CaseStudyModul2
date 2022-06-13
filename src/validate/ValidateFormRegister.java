@@ -26,14 +26,14 @@ public class ValidateFormRegister {
         Matcher m = p.matcher(registeredName.trim());
         if (m.matches()) {
             if(checkRegisteredNameExist(accountList,registeredName)){
-                System.out.println("Vui lòng đặt nick name khác,nick name đã tồn tại");
+                System.out.println("Tài khoản đã tồn tại");
                 return validateRegisteredName(accountList);
             }
             else {
                 return registeredName;
             }
         } else {
-            System.out.println("Vui lòng nhập lai ! Chữ cái đầu cần viết hoa và có đủ độ dài từ 6-12 ký tự!");
+            System.out.println("Nhập lại username (viết hoa chữ cái đầu)!");
             return validateRegisteredName(accountList);
         }
     }
@@ -55,7 +55,7 @@ public class ValidateFormRegister {
     }
 
     public String validateRegisteredEmail(ArrayList<AccountRegister> accountList) {
-        System.out.println("Nhập email mà bạn muốn đăng ký :");
+        System.out.println("Nhập email đăng ký :");
         String registeredEmail = sc.nextLine();
         final String emailRegex = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
         Pattern p = Pattern.compile(emailRegex);
@@ -81,7 +81,7 @@ public class ValidateFormRegister {
         return -1;
     }
     public String validateRegisteredNumberTelephone(ArrayList<AccountRegister> accountList){
-        System.out.println("Nhập số điện thoại mà bạn muốn đăng ký:");
+        System.out.println("Nhập số điện thoại đăng ký:");
         String registeredNumberTelephone = sc.nextLine();
         final String numberTelephoneRegex= "^0[0-9]{9}";
         Pattern p = Pattern.compile(numberTelephoneRegex);

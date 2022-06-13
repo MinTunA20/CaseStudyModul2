@@ -33,7 +33,7 @@ public class validateAccount {
                 return registeredName;
             }
         } else {
-            System.out.println("Viết hoa chữ cái đầu và có đủ độ dài từ 6-12 ký tự!");
+            System.out.println("Please try again  (Viết hoa chữ cái đầu và có đủ độ dài từ 6-12 ký tự!)");
             return validateRegisteredName(accountList);
         }
     }
@@ -64,11 +64,11 @@ public class validateAccount {
             if (checkRegisteredEmailExist(accountList, registeredEmail)< 0) {
                 return registeredEmail;
             } else {
-                System.out.println("Email đã tồn tại ! Vui lòng thử lại !");
+                System.out.println("Email đã tồn tại, Please try again!");
                 return validateRegisteredEmail(accountList);
             }
         } else {
-            System.out.println("Email không hợp lệ ! Vui lòng thử lại !");
+            System.out.println("Email không hợp lệ ! Please try again!");
             return validateRegisteredEmail(accountList);
         }
     }
@@ -91,12 +91,12 @@ public class validateAccount {
                 return registeredNumberTelephone;
             }
             else {
-                System.out.println("Số điện thoại đã tồn tại ! vui lòng thử lại!");
+                System.out.println("Số điện thoại đã tồn tại ! Please try again!");
                 return validateRegPhone(accountList);
             }
         }
         else {
-            System.out.println("Số điện thoại không hợp lệ ! Vui lòng thử lại!");
+            System.out.println("Please try again!");
             return validateRegPhone(accountList);
         }
     }

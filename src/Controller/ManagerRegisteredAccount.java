@@ -32,7 +32,6 @@ public class ManagerRegisteredAccount implements InterfaceAccount {
             if (validateFormRegister.validateRegisteredNPassword(registeredPassword)) {
                 break;
             } else {
-                System.out.println("Mật khẩu chưa hợp lệ!");
             }
         }
         while (true){
@@ -147,7 +146,7 @@ public class ManagerRegisteredAccount implements InterfaceAccount {
     public void menuRegisterAccount(){
         System.out.println("1.Đăng ký !");
         System.out.println("2.Đăng nhập!");
-        System.out.println("3.Lấy lại mật khẩu!");
+//        System.out.println("3.Lấy lại mật khẩu!");
         try {
             System.out.println("Nhập lựa chọn:");
             int choice = Integer.parseInt(sc.nextLine());

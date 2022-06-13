@@ -31,7 +31,7 @@ public class ReaderAndWriteProduct {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String str = bufferedReader.readLine();
-            while ((str = bufferedReader.readLine()) !=null){
+            while (str !=null){
                 String[] arr = str.split(",");
                 int Id = Integer.parseInt(arr[0]);
                 String Name = arr[1];
