@@ -144,16 +144,18 @@ public class ManagerRegisteredAccount implements InterfaceAccount {
     }
     @Override
     public void menuRegisterAccount(){
-        System.out.println("1.Đăng ký !");
-        System.out.println("2.Đăng nhập!");
-//        System.out.println("3.Lấy lại mật khẩu!");
+        System.out.println("▆▆▆▆▆▆▆▆▆▆▆▆▆▆ Login ▆▆▆▆▆▆▆▆▆▆▆▆▆▆");
+        System.out.println("▆           1.Đăng ký !           ▆");
+        System.out.println("▆          2.Đăng nhập!           ▆");
+        System.out.println("▆         3.Lấy lại mật khẩu!     ▆");
+        System.out.println("▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆");
         try {
             System.out.println("Nhập lựa chọn:");
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice){
                 case 1:
                     addAccount();
-                    System.out.println("Đăng ký thành công!");
+                    System.out.println("*****Đăng ký thành công!*****");
                     break;
                 case 2:
                     for(AccountRegister f:AccountList){

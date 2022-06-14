@@ -2,39 +2,38 @@ package Controller;
 
 import IO.ReaderAndWriteProduct;
 import Model.Product;
-import validate.ValidateProduct;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import static Controller.manageProduct.products;
+
 
 public class MenuAll {
     static Scanner scanner = new Scanner(System.in);
     static manageProduct manageProducts = new manageProduct();
     static ReaderAndWriteProduct readerAndWriteProduct = new ReaderAndWriteProduct();
-    ValidateProduct validateProduct = new ValidateProduct();
+
 
     public static Product admin() {
-        System.out.println("===========Menu==========");
-        System.out.println("1. Danh mục sản phẩm");
-        System.out.println("2. Thêm mới sản phẩm");
-        System.out.println("3. Chỉnh sửa thông tin sản phẩm");
-        System.out.println("4. Xóa sản phẩm");
-        System.out.println("5. Sắp xếp sản phẩm ");
+        System.out.println("---------------- Menu ----------------");
+        System.out.println("|    1. Danh mục sản phẩm             |");
+        System.out.println("|    2. Thêm mới sản phẩm             |");
+        System.out.println("|    3. Chỉnh sửa thông tin sản phẩm  |");
+        System.out.println("|    4. Xóa sản phẩm                  |");
+        System.out.println("|    5. Sắp xếp sản phẩm              |");
 //        System.out.println("6. In mẫu thống kê sản phẩm");
-//        System.out.println("6. Sản phẩm có giá trị đắt nhất: ");
-        System.out.println("7. Đọc file");
-        System.out.println("8. Ghi file");
+        System.out.println("|    6. Sản phẩm có giá trị đắt nhất: |");
+        System.out.println("|    7. Đọc file                      |");
+        System.out.println("|    8. Ghi file                      |");
+        System.out.println("|    9. Log out                       |");
+        System.out.println("▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆");
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1:
-                products = readerAndWriteProduct.reader();
                 manageProducts.show();
                 break;
             case 2:
                 manageProducts.addProduct(manageProducts.createProduct());
-                readerAndWriteProduct.write(products);
+
                 break;
             case 3:
                 manageProducts.editProduct();
@@ -57,19 +56,24 @@ public class MenuAll {
             }
                 manageProducts.show();
             break;
-//            case 6:
+            case 6:
+                manageProducts.searchExpensiveProduct();
+                break;
 //
             case 7:
-                products = readerAndWriteProduct.reader();
+                manageProducts.products = readerAndWriteProduct.reader();
                 System.out.println("đã đọc");
                 manageProducts.show();
                 MenuAll.admin();
                 break;
             case 8:
-                readerAndWriteProduct.write(products);
+                readerAndWriteProduct.write(manageProducts.products);
                 System.out.println("đã ghi");
                 manageProducts.show();
                 MenuAll.admin();
+                break;
+            case 9:
+                new ManagerRegisteredAccount();
                 break;
 //        }
 //        ;
